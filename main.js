@@ -66,22 +66,29 @@ sort.addEventListener('change', () => {
 
 
 
-function Book (author,title,pages,read){
+class Book{
 
-    this.author = author
-    this.title = title
-    this.pages = pages
-    this.read = read
+    constructor(author,title,pages,read){
+        this.author = author
+        this.title = title
+        this.pages = pages
+        this.read = read
+    }
 
 }
 
+
+
+
 function displayLibrary(libraryArr){
+
     main.textContent = ''
+
     libraryArr.forEach((item,index) => {
 
        const book = createBook(item,index)
 
-        main.append(book)
+       main.append(book)
     })
 
     main.append(addBtn)
